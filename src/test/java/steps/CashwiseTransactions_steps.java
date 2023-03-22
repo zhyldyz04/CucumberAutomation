@@ -3,7 +3,7 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.WebElement;
 import pages.CashwiseTransactionsPage;
 import utilities.Config;
 import utilities.Driver;
@@ -44,16 +44,12 @@ public class CashwiseTransactions_steps {
         cashwiseTransactionsPage.listOfCategories.get(4).click();
 
         cashwiseTransactionsPage.paymentMethod.click();
-        cashwiseTransactionsPage.listOfPaymentMethod.get(0).click();
+        cashwiseTransactionsPage.listOfPaymentMethod.get(1).click();
         cashwiseTransactionsPage.paymentInvoice.click();
         cashwiseTransactionsPage.listOfInvoices.get(0).click();
         cashwiseTransactionsPage.amountOfMoney.sendKeys("12.5");
         cashwiseTransactionsPage.payButton.click();
     }
-
-
-
-
 
 
     @Then("I should be able to search specific transaction")
@@ -65,11 +61,12 @@ public class CashwiseTransactions_steps {
         cashwiseTransactionsPage.allStatusesButton.click();
         Flow.wait(500);
 
-        cashwiseTransactionsPage.listOfStatuses.get(2).click();
-        Flow.wait(1000);
+        cashwiseTransactionsPage.listOfStatuses.get(1).click();
+        Flow.wait(2000);
 
-
-
+        for(WebElement result: cashwiseTransactionsPage.results){
+            System.out.println(result.getText());
+        }
 
     }
 

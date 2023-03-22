@@ -55,7 +55,7 @@ public class CashwiseTransactionsPage {
    @FindBy(xpath = "((//div[@class='css-1jp37qf'])[3]//div)[3]")
    public WebElement paymentMethod;
 
-   @FindBy(xpath = "//ul/li")
+   @FindBy(xpath = "//div[@id = 'menu-type_of_pay']//ul/li")
    public List <WebElement> listOfPaymentMethod;
 
    @FindBy(xpath = "((//div[@class='css-1jp37qf'])[4]//div)[3]")
@@ -67,24 +67,25 @@ public class CashwiseTransactionsPage {
    @FindBy(xpath = "//div[@class='css-1qvwkju']/button[2]")
    public WebElement payButton;
 
-   @FindBy(xpath = "//ul/li")
+   @FindBy(xpath = "//div[@id='menu-bank_account']//ul/li")
    public List<WebElement> listOfInvoices;
 
 
    @FindBy(xpath = "(//div[@class='css-1lqlqnj'][1]//div)[3]")
     public WebElement allStatusesButton;
 
-   @FindBy(xpath = "//ul/li")
+   @FindBy(xpath = "//div[@id='menu-status']//ul/li")
    public List <WebElement> listOfStatuses;
 
    @FindBy(xpath = "((//div[@class='css-1lqlqnj'])[2]//div)[2]")
     public WebElement paymentTypeButton;
 
-   @FindBy(xpath = "//ul/li")
+   @FindBy(xpath = "//div[@id='menu-typeOfPay']//ul/li")
    public List <WebElement> listOfPaymentType;
 
-   @FindBy(xpath = "(//div/input)[5]")    ////*[@id="mui-component-select-categoryId"]
-    public WebElement allCategoriesButton;
+  @FindBy(xpath = "//tbody/tr")
+    public List <WebElement> results;
+
 
 
 
