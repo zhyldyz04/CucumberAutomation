@@ -9,8 +9,9 @@ import org.junit.runner.RunWith;
         plugin = "html:target/cucumberReports.html",
         features = "src/test/resources/features",
         glue = "steps",
-        tags = "@cashwise",
+        tags = "@dcConnection",
         dryRun = false
+
 
 
 
