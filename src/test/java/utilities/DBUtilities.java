@@ -2,6 +2,7 @@ package utilities;
 
 import org.checkerframework.checker.units.qual.C;
 
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -131,7 +132,14 @@ Executes a SQL  query and returns the first cell value of the result set
             while (resultSet.next()) {
                 Map<String, Object> rowMap = new HashMap<>();
                 for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
-                    rowMap.put(resultSet.getMetaData().getColumnName(i), resultSet.getObject(i));
+
+                    if (resultSet.getObject(i).getClass().equals(BigDecimal.class)){
+                        BigDecimal bd = (BigDecimal) resultSet.getObject(i);
+                        rowMap.put(resultSet.getMetaData().getColumnName(i), bd.intValue());
+                    }else{
+                        rowMap.put(resultSet.getMetaData().getColumnName(i), resultSet.getObject(i));
+                    }
+
                 }
                 resultList.add(rowMap);
             }
@@ -140,7 +148,6 @@ Executes a SQL  query and returns the first cell value of the result set
         }
         return resultList;
     }
-
 
 
 }

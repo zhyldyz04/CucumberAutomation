@@ -6,4 +6,7 @@ public class Google {
 
         System.out.println("Welcome to Google");
     }
+    public void welcome(){
+
+    }
 }

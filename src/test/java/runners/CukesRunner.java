@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = "html:target/cucumberReports.html",
         features = "src/test/resources/features",
         glue = "steps",
-        tags = "@dcConnection",
+        tags = "@dbConnection",
         dryRun = false
 
 
